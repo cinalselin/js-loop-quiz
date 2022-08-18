@@ -95,10 +95,7 @@ for (let i = 0; i <= data.length; i++) {
   );
 }
 
-// ALTE VORGEHENSWEISE IM FOR LOOP FREDDY BEISPIEL
+// ALTE VORGEHENSWEISE IM FOR LOOP
 //   document.querySelector(
 //     "#content"
 //   ).innerHTML += ` <img src="${data[i].url}" alt=""> <h1> ${data[i].question} </h1> <button>${data[i].choice}</button> <button>${data[i].answer}</button> <br>`;
-
-// LÖSUNG IMG TAG ERSTELLEN (appendchild)
-// https://www.geeksforgeeks.org/how-to-create-an-image-element-dynamically-using-javascript/
