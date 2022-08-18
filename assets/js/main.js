@@ -70,6 +70,8 @@ for (let i = 0; i <= data.length; i++) {
   img.src = data[i].url;
   content.appendChild(img);
 
+  // TODO not working properly -> undefined
+
   const question = document.createElement("h2");
   question.innerText = data[i].question;
   content.appendChild(question);
@@ -84,6 +86,7 @@ for (let i = 0; i <= data.length; i++) {
     item.addEventListener("click", () => {
       console.log("clicked");
 
+      // TODO not working properly
       if (item.innerText == data[i].answer) {
         document.body.style.backgroundColor = "green";
         console.log("right choice!");
