@@ -67,35 +67,37 @@ let data = [
 
 for (let i = 0; i <= data.length; i++) {
   const img = document.createElement("img");
-  img.src = data[i].url;
+  img.setAttribute("src", data[i].url);
+  //   img.src = data[i].url;
   content.appendChild(img);
 
-  // TODO not working properly -> undefined
+  // TODO not working properly ->
 
   const question = document.createElement("h2");
   question.innerText = data[i].question;
   content.appendChild(question);
 
-  for (let a = 0; a <= data[i].choice.length; a++) {
+  for (let a = 0; a < data[i].choice.length; a++) {
     const choice = document.createElement("button");
     choice.innerText = data[i].choice[a];
     content.appendChild(choice);
-  }
-  const buttonClick = document.querySelectorAll("button");
-  buttonClick.forEach((item) =>
-    item.addEventListener("click", () => {
-      console.log("clicked");
 
-      // TODO not working properly
-      if (item.innerText == data[i].answer) {
-        document.body.style.backgroundColor = "green";
-        console.log("right choice!");
-      } else {
-        document.body.style.backgroundColor = "red";
-        console.log("try again!");
-      }
-    })
-  );
+    // const answer = data[i].answer
+
+    const buttonClick = document.querySelectorAll("button");
+    buttonClick.forEach((item) =>
+      item.addEventListener("click", () => {
+        // TODO not working properly
+        if (item.innerText.toString() == data[i].answer.toString()) {
+          choice.style.backgroundColor = "green";
+          console.log("right choice!" + data[i].answer);
+        } else {
+          choice.style.backgroundColor = "red";
+          console.log("try again!");
+        }
+      })
+    );
+  }
 }
 
 // ALTE VORGEHENSWEISE IM FOR LOOP
