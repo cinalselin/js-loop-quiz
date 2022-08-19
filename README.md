@@ -8,8 +8,8 @@ In this project, the predefined array and DOM properties should be used to creat
 
 ### Links
 
-- Solution URL: [Quiz Code](https://your-solution-url.com)
-- Live Site URL: [Quiz Demo](https://your-live-site-url.com)
+- Solution URL: [https://github.com/cinalselin/js-loop-quiz](https://github.com/cinalselin/js-loop-quiz)
+- Live Site URL: [https://cinalselin.github.io/js-loop-quiz/](https://cinalselin.github.io/js-loop-quiz/)
 
 ## My process
 
@@ -20,4 +20,4 @@ In this project, the predefined array and DOM properties should be used to creat
 
 ## Author
 
-- Website - [cinalselin](https://www.your-site.com)
+- Website - [https://github.com/cinalselin](https://github.com/cinalselin)
