@@ -65,24 +65,23 @@ let data = [
   },
 ];
 
+// LOOP THROUGH ARRAY
 for (let i = 0; i <= data.length; i++) {
+  // IMG
   const img = document.createElement("img");
-  img.setAttribute("src", data[i].url);
-  //   img.src = data[i].url;
+  img.setAttribute("src", data[i].url); //TODO Syntax Error
   content.appendChild(img);
 
-  // TODO not working properly ->
-
+  // QUESTION
   const question = document.createElement("h2");
   question.innerText = data[i].question;
   content.appendChild(question);
 
+  // FOR LOOP FOR CHOICES
   for (let a = 0; a < data[i].choice.length; a++) {
     const choice = document.createElement("button");
     choice.innerText = data[i].choice[a];
     content.appendChild(choice);
-
-    // const answer = data[i].answer
 
     const buttonClick = document.querySelectorAll("button");
     buttonClick.forEach((item) =>
@@ -90,17 +89,23 @@ for (let i = 0; i <= data.length; i++) {
         // TODO not working properly
         if (item.innerText.toString() == data[i].answer.toString()) {
           choice.style.backgroundColor = "green";
+          choice.style.color = "white";
           console.log("right choice!" + data[i].answer);
         } else {
           choice.style.backgroundColor = "red";
-          console.log("try again!");
+          choice.style.color = "white";
+          console.log("wrong");
         }
       })
     );
   }
 }
 
-// ALTE VORGEHENSWEISE IM FOR LOOP
+// ================= Alter Code ================
+
+// const answer = data[i].answer
+// img.src = data[i].url;
+
 //   document.querySelector(
 //     "#content"
 //   ).innerHTML += ` <img src="${data[i].url}" alt=""> <h1> ${data[i].question} </h1> <button>${data[i].choice}</button> <button>${data[i].answer}</button> <br>`;
