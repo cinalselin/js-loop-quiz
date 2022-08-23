@@ -1,7 +1,6 @@
 // VARIABLE DIV
 const content = document.getElementById("content");
 
-// ARRAY
 let data = [
   {
     url: "https://cdn.playbuzz.com/cdn//f063e8fe-ad57-485e-8211-ed2ee0d9a205/4a864049-816a-479e-8736-51740e8b724b.jpg",
@@ -69,7 +68,7 @@ let data = [
 for (let i = 0; i <= data.length; i++) {
   // IMG
   const img = document.createElement("img");
-  img.setAttribute("src", data[i].url); //TODO Syntax Error
+  img.setAttribute("src", data[i].url);
   content.appendChild(img);
 
   // QUESTION
@@ -82,30 +81,13 @@ for (let i = 0; i <= data.length; i++) {
     const choice = document.createElement("button");
     choice.innerText = data[i].choice[a];
     content.appendChild(choice);
-
-    const buttonClick = document.querySelectorAll("button");
-    buttonClick.forEach((item) =>
-      item.addEventListener("click", () => {
-        // TODO not working properly
-        if (item.innerText.toString() == data[i].answer.toString()) {
-          choice.style.backgroundColor = "green";
-          choice.style.color = "white";
-          console.log("right choice!" + data[i].answer);
-        } else {
-          choice.style.backgroundColor = "red";
-          choice.style.color = "white";
-          console.log("wrong");
-        }
-      })
-    );
   }
+  const buttonClick = document.querySelectorAll("button");
+  buttonClick.forEach((item) =>
+    item.addEventListener("click", () => {
+      if (item.innerText.toString() === data[i].answer.toString()) {
+        item.style.backgroundColor = "green";
+      }
+    })
+  );
 }
-
-// ================= Alter Code ================
-
-// const answer = data[i].answer
-// img.src = data[i].url;
-
-//   document.querySelector(
-//     "#content"
-//   ).innerHTML += ` <img src="${data[i].url}" alt=""> <h1> ${data[i].question} </h1> <button>${data[i].choice}</button> <button>${data[i].answer}</button> <br>`;
